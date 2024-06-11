@@ -1,0 +1,30 @@
+<apex:page showHeader="false" standardController="Employee__c">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <style>
+            .social-icons-container {
+                display: flex;
+                justify-content: space-around;
+                padding: 0 5%; /* Adjust the padding as needed */
+            }
+
+            .social-icon {
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="social-icons-container">
+            <a href="{!Employee__c.Linkedin__c }" target="_blank" title="LinkedIn" class="social-icon">
+                <i class="fab fa-linkedin fa-4x"></i>
+            </a>
+            <a href="{!Employee__c.Facebook__c }" target="_blank" title="Facebook" class="social-icon">
+                <i class="fab fa-facebook fa-4x"></i>
+            </a>
+            <a href="{!Employee__c.Instagram__c }" target="_blank" title="Instagram" class="social-icon">
+                <i class="fab fa-instagram fa-4x"></i>
+            </a>
+        </div>
+    </body>
+</apex:page>

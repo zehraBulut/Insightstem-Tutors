@@ -1,0 +1,26 @@
+{
+  "contact": {
+    "fName": "John",
+    "lName": "Doe",
+    "contactEmail": "johndoe@example.com",
+    "contactPhone": "123-456-7890",
+    "contactMobile": "987-654-3210",
+    "mailingAddress": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "CA",
+      "postalCode": "12345",
+      "country": "USA"
+    },
+    "otherAddress": {
+      "street": "456 Elm St",
+      "city": "Otherville",
+      "state": "NY",
+      "postalCode": "54321",
+      "country": "USA"
+    },
+    "contactCompany": "ABC Inc.",
+    "contactTitle": "Sales Manager",
+    "contactLevel": "Primary"
+  }
+}

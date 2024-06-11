@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Clean_Org</name>
+        <label>Clean Org</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>SandboxUtility</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>success</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>API_Log</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <nameSegment>SandboxUtility</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>Clear Org {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Clear Org</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>API_Log</name>
+        <label>API Log</label>
+        <locationX>440</locationX>
+        <locationY>242</locationY>
+        <inputAssignments>
+            <field>API_Name__c</field>
+            <value>
+                <stringValue>Clear Org</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Is_Error__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Log_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <object>API_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <screens>
+        <name>success</name>
+        <label>success</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>successmsg</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(49, 152, 31);&quot;&gt;All records have been &lt;/strong&gt;&lt;strong style=&quot;color: rgb(225, 22, 204); font-size: 14px;&quot;&gt;DeLeted &lt;/strong&gt;&lt;strong style=&quot;color: rgb(49, 152, 31);&quot;&gt;successfully.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Clean_Org</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>
